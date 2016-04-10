@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('head')
+
+    <script src="{{ asset('js/jquery.maskedinput.js') }}" type="text/javascript"></script>
+
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
@@ -144,4 +150,13 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    jQuery(function($){
+       $("#dob").mask("99/99/9999");
+       $("#phone").mask("(99) ?99999 9999");
+       $("#rg").mask("99.999.999-9");
+       $("#address-cep").mask("99999-999");
+    });
+    
+</script>
 @endsection

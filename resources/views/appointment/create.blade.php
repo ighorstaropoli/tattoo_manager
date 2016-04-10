@@ -1,4 +1,10 @@
-  <div class="col-md-4">
+ @section('head')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap-datepicker3.min.css') }}">
+    <script src="{{ asset('js/jquery.maskedinput.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.min.js') }}" type="text/javascript"></script>
+
+@endsection
+ <div class="col-md-4">
             <div class="panel panel-default">
             <div class="panel-heading">
              New Appointment
@@ -18,7 +24,7 @@
                             <label class="col-md-4 control-label">Date:</label>
 
                             <div class="col-md-4">
-                                <input type="text" class="form-control" id="date" name="date" value="{{ old('date') }}">
+                                <input type="text" class="form-control datepicker"  name="date" value="{{ old('date') }}">
                             </div>
                         </div>
 
@@ -72,3 +78,11 @@
 
             </div>
         </div>
+<script type="text/javascript">
+    jQuery(function($){
+       $("#hour").mask("99:99");
+       $('.datepicker').datepicker({
+            format: 'dd/mm/yyyy'
+        });
+    });    
+</script>
