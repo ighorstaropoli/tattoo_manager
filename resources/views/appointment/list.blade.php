@@ -3,7 +3,7 @@
    <div class="panel-body">
         <table class="table">  
  			@foreach ($appointments as $appoint)
-                <tr>
+                <tr>                           
                     <td class="table-text"><div>{{ $appoint->date->format('d/m/Y') }}</div></td>
                     <td class="table-text"><div>{{ $appoint->hour }}</div></td>
                     <td>

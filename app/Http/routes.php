@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* usar resource */
+#Route::get('/client/create','ClientController@create');
+
+#Route::post('/client/store','ClientController@store');
+
+#Route::get('/client/{id}','ClientController@show');
+
+Route::resource('client', 'ClientController');
+
+Route::resource('appointment', 'AppointmentController');

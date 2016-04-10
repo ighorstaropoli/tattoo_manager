@@ -26,7 +26,7 @@ class StoreClientPostRequest extends Request
         return [
             'email' => 'required|email',
             'name' => 'required|min:3',
-            'dob' => 'required|date_format:d/m/Y',
+            #'dob' => 'required|date_format:d/m/Y',
             'gender' => 'required',
             'rg' => 'required',
             'phone' => 'required',

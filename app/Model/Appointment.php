@@ -19,10 +19,12 @@ class Appointment extends Model
         return $this->belongsTo(Client::class);
     }
 
-    /*protected function getDateFormat()
+    public function allOrdened()
     {
-        return 'd/m/Y';
-    }*/
+        return $this->orderBy('date', 'desc')
+                    ->orderBy('hour', 'desc')
+                    ->get();
+    }
 
     /**
      * Get all of the tasks for a given user.
@@ -33,7 +35,8 @@ class Appointment extends Model
     public function forClient(Client $client)
     {
         return $this->where('client_id', $client->id)
-                    ->orderBy('created_at', 'asc')
+                    ->orderBy('date', 'desc')
+                    ->orderBy('hour', 'desc')
                     ->get();
     }
 }

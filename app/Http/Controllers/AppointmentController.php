@@ -20,7 +20,7 @@ class AppointmentController extends Controller
     {
         $appointment = new Appointment();
         return view('appointment.index',  [
-            'appointments' => $appointment->all()
+            'appointments' => $appointment->allOrdened()
         ]);
     }
 
@@ -44,7 +44,7 @@ class AppointmentController extends Controller
     {
         $appointment = new Appointment();
 
-        $appointment->date = date("Y-m-d", strtotime($request->date));
+        $appointment->date = $request->date;
         $appointment->hour = $request->hour;
         $appointment->client_id = $request->client;
         
@@ -67,7 +67,7 @@ class AppointmentController extends Controller
     public function show($id)
     {
         $appointment = Appointment::find($id);
-        $client = Client::find($appointment->client_id);;
+        $client = Client::find($appointment->client_id);
 
         return view('appointment.show', [
             'client' => $client, 

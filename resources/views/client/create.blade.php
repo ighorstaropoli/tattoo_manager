@@ -41,8 +41,17 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">Date of Birth</label>
 
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" id="dob" name="dob" value="{{ old('dob') }}">
+                            <div class="col-md-1">
+                                <input type="text" class="form-control"  name="dob[day]" value="{{ old('dob.day') }}">
+                                <label>day</label>
+                            </div>
+                            <div class="col-md-1">
+                                <input type="text" class="form-control" name="dob[month]" value="{{ old('dob.month') }}">
+                                <label>month</label>
+                            </div>
+                            <div class="col-md-2">
+                                <input type="text" class="form-control"  name="dob[year]" value="{{ old('dob.year') }}">
+                                <label>year</label>
                             </div>
                         </div>
 

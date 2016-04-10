@@ -82,7 +82,7 @@
     jQuery(function($){
        $("#hour").mask("99:99");
        $('.datepicker').datepicker({
-            format: 'dd/mm/yyyy'
+            format: 'yyyy-m-d'
         });
     });    
 </script>
