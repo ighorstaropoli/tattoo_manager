@@ -11,7 +11,7 @@
                 <div class="panel-body">                
                     <h2>{{ $client->name }}</h2>
                     <p>
-                        <strong>Date:</strong> {{ $appointment->date }}<br>
+                        <strong>Date:</strong> {{ $appointment->date->format('d/m/Y') }}<br>
                         <strong>Hour:</strong> {{ $appointment->hour }}<br>
                         <strong>Tattoo Artist:</strong> {{ $appointment->tattooist }}<br><br>
                         <strong>Body Space:</strong> {{ $appointment->bodyspace }}<br><br>

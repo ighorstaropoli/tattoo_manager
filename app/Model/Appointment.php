@@ -8,6 +8,9 @@ use App\Model\Client;
 
 class Appointment extends Model
 {
+
+    protected $dates = ['date'];
+
    /**
      * Get the user that owns the task.
      */
@@ -15,6 +18,11 @@ class Appointment extends Model
     {
         return $this->belongsTo(Client::class);
     }
+
+    /*protected function getDateFormat()
+    {
+        return 'd/m/Y';
+    }*/
 
     /**
      * Get all of the tasks for a given user.

@@ -13,7 +13,7 @@
                     <h2>{{ $client->name }}</h2>
                     <p>
                         <strong>Email:</strong> {{ $client->email }}<br>
-                        <strong>Date of Birth:</strong> {{ $client->dob }}<br>
+                        <strong>Date of Birth:</strong> {{ $client->dob->format('d/m/Y') }}<br>
                         <strong>Gender:</strong> {{ $client->gender }}<br>  
                         <strong>RG:</strong> {{ $client->rg }}<br>
                         <strong>Phone:</strong> {{ $client->phone }}<br>
