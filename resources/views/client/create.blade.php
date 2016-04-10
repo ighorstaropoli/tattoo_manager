@@ -41,18 +41,10 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">Date of Birth</label>
 
-                            <div class="col-md-1">
-                                <input type="text" class="form-control"  name="dob[day]" value="{{ old('dob.day') }}">
-                                <label>day</label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="dob" name="dob" value="{{ old('dob') }}">
                             </div>
-                            <div class="col-md-1">
-                                <input type="text" class="form-control" name="dob[month]" value="{{ old('dob.month') }}">
-                                <label>month</label>
-                            </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control"  name="dob[year]" value="{{ old('dob.year') }}">
-                                <label>year</label>
-                            </div>
+
                         </div>
 
                         <div class="form-group">
@@ -161,7 +153,7 @@
 </div>
 <script type="text/javascript">
     jQuery(function($){
-       $("#dob").mask("99/99/9999");
+       $("#dob").mask("99-99-9999");
        $("#phone").mask("(99) ?99999 9999");
        $("#rg").mask("99.999.999-9");
        $("#address-cep").mask("99999-999");

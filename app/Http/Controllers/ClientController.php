@@ -49,9 +49,7 @@ class ClientController extends Controller
         /* client info */
         $client->name = $request->name;
         $client->email = $request->email;
-        #$client->dob = date("Y-m-d", strtotime($request->dob));
-        $dob = $request->dob;
-        $client->dob = $dob['year'].'-'.$dob['month'].'-'.$dob['day'];
+        $client->dob = strtotime($request->dob);
         $client->gender = $request->gender;
         #$client->rg = preg_replace('/\D/','', $request->rg);
         $client->rg = $request->rg;
