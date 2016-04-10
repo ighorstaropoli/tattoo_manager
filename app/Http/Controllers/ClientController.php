@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Model\Client;
+use App\Model\Appointment;
 use App\Http\Requests\StoreClientPostRequest;
 
 class ClientController extends Controller
@@ -79,8 +80,11 @@ class ClientController extends Controller
     public function show($id)
     {       
         $client = Client::find($id);
+        $appointments = new Appointment();
+
         return view('client.show', [
-            'client' => $client
+            'client' => $client, 
+            'appointments' =>  $appointments->forClient($client)
         ]);
     }
 

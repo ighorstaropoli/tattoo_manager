@@ -35,6 +35,9 @@
                 </div>
             </div>
         </div>
+        <!--  Appointment -->
+         @include('appointment.create')
+         @include('appointment.list')
     @else
         <div class="panel panel-default">
             <div class="panel-heading">

@@ -42,6 +42,12 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Tattoo
                 </a>
+                 <a class="navbar-brand" href="{{ url('/client') }}">
+                    Clients
+                </a>
+                 <a class="navbar-brand" href="{{ url('/appointment') }}">
+                    Appointments
+                </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
