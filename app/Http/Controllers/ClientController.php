@@ -19,9 +19,6 @@ class ClientController extends Controller
     public function index()
     {   
          $client = new Client();
-
-        return redirect('client', array('id' => 1));
-
         return view('client.index',  [
             'clients' => $client->all()
         ]);
@@ -70,8 +67,7 @@ class ClientController extends Controller
 
         $client->save();
 
-        return redirect()->route('client', $client->id); 
-        #redirect('/client/' . $client->id);
+        return redirect()->action('ClientController@show', ['id' => $client->id]);
     }
 
     /**
@@ -81,9 +77,11 @@ class ClientController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        print_r($id);
-
+    {       
+        $client = Client::find($id);
+        return view('client.show', [
+            'client' => $client
+        ]);
     }
 
     /**
